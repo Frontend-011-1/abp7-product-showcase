@@ -1,3 +1,5 @@
+// A veces cuando se usa por primera vez Cypress puede que les de un error. Para solucionarlo tienen que correr (estando dentro de la carpeta del proyecto) el comando npm exec cypress install
+
 describe('Product Filter', () => {
   beforeEach(() => {
     cy.intercept('GET', '**/products*', {

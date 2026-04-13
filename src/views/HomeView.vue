@@ -62,7 +62,7 @@ onMounted(async () => {
     </v-row>
     <p>Favoritos: {{ totalFavoritos }}</p>
     <div v-if="loading">Cargando productos...</div>
-    <div v-else-if="error">{{ error }}</div>
+    <div v-else-if="error" data-test="error-msg">{{ error }}</div>
     <ProductList v-else :products="productosFiltrados" />
   </div>
 </template>
