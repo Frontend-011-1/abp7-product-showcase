@@ -14,7 +14,7 @@ defineProps({
   <div>
     <h1>Home</h1>
     <v-row>
-      <v-col cols="12" md="6" lg="4" xl="3" v-for="product in products" :key="product._id">
+      <v-col cols="12" md="6" lg="4" xl="3" v-for="product in products" :key="product._id" data-cy="product-card">
         <ProductCard :product="product" />
       </v-col>
     </v-row>

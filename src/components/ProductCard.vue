@@ -1,18 +1,19 @@
 <script setup>
-import { ref } from 'vue';
-import { defineProps } from 'vue';
+import { useStore } from 'vuex';
+import { defineProps, computed } from 'vue';
 
-defineProps({
+const store = useStore()
+
+const props = defineProps({
   product: {
     type: Object,
     required: true
   }
 })
-const esFavorito = ref(false)
+const esFavorito = computed(() => store.getters['favoritos/esFavorito'](props.product._id))
 
 const toggleFavorito = () => {
-  // ! operador de negacion -> le asigna el valor opuesto
-  esFavorito.value = !esFavorito.value
+  store.dispatch('favoritos/toggleFavoritos', props.product)
 }
 </script>
 
